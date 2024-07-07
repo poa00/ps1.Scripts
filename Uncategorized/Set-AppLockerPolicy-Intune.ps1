@@ -64,6 +64,20 @@ $NewPolicy = @"
       </FilePublisherCondition>
     </Conditions>
   </FilePublisherRule>
+  <FilePublisherRule Id="a8b026cb-dc1a-4f29-879b-6d8823048999" Name="ARTICULATE 360 Certificate from O=ARTICULATE GLOBAL, INC., L=NEW YORK, S=NEW YORK, C=US" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <Conditions>
+        <FilePublisherCondition PublisherName="O=ARTICULATE GLOBAL, INC., L=NEW YORK, S=NEW YORK, C=US" ProductName="*" BinaryName="*">
+            <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+    </Conditions>
+  </FilePublisherRule>
+  <FilePublisherRule Id="24e7483c-c382-4fcc-89f9-df72aa6143b3" Name="ARTICULATE 360 Certificate from O=ARTICULATE GLOBAL, INC., L=NEW YORK, S=NEW YORK, C=US" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <Conditions>
+        <FilePublisherCondition PublisherName="O=ARTICULATE GLOBAL, LLC., L=NEW YORK, S=NEW YORK, C=US" ProductName="*" BinaryName="*">
+            <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+    </Conditions>
+  </FilePublisherRule>
   </RuleCollection>
 </AppLockerPolicy>
 "@
@@ -83,10 +97,10 @@ Try {
 
     # Report Success
     Write-host "New Applocker Policy Loaded"
-    Exit 0
+    #Exit 0
 }
 Catch {
     $ErrorMsg = $_.Exception.Message
     Write-host "Error $ErrorMsg"
-    Exit 1
+    #Exit 1
 }
